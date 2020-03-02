@@ -43,6 +43,7 @@ function onDeviceReady(){
 
 	 
 function refreshDeviceList(){
+	
 	//deviceList =[];
 	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
 	if (cordova.platformId === 'android') { // Android filtering is broken
@@ -56,10 +57,13 @@ function refreshDeviceList(){
 
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
+		if (device.name == "Asta Test") {
+		
 		var listItem = document.createElement('li'),
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
+		}
 }
 
 
